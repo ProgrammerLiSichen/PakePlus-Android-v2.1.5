@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英语天学网答案 | FTX工具在线发布中心</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+            background-image: 
+                radial-gradient(at 10% 20%, rgba(59, 130, 246, 0.05) 0px, transparent 50%),
+                radial-gradient(at 90% 80%, rgba(139, 92, 246, 0.05) 0px, transparent 50%);
+        }
+        
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1e293b;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            color: #64748b;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 15px;
+        }
+        
+        .update-time {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            margin-top: 10px;
+        }
+        
+        .update-time i {
+            font-size: 0.9rem;
+        }
+        
+        .content-card {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        }
+        
+        .page-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .page-title i {
+            font-size: 2rem;
+            color: #3b82f6;
+            margin-right: 15px;
+        }
+        
+        .page-title h2 {
+            color: #1e293b;
+            font-size: 1.8rem;
+        }
+        
+        .answers-container {
+            margin-bottom: 40px;
+        }
+        
+        .answer-row {
+            display: flex;
+            align-items: flex-start;
+            padding: 18px 20px;
+            border-bottom: 1px solid #f1f5f9;
+            transition: all 0.2s ease;
+        }
+        
+        .answer-row:hover {
+            background-color: #f8fafc;
+            border-radius: 8px;
+        }
+        
+        .answer-row:nth-child(even):hover {
+            background-color: #f8fafc;
+        }
+        
+        .answer-row:nth-child(even) {
+            background-color: #fafafa;
+        }
+        
+        .answer-number {
+            font-weight: 700;
+            color: #3b82f6;
+            min-width: 60px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            width: 40px;
+            background-color: #eff6ff;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        
+        .answer-content {
+            color: #475569;
+            font-size: 1.1rem;
+            padding: 10px 0;
+            flex-grow: 1;
+            line-height: 1.5;
+        }
+        
+        .project-info {
+            background-color: #f0f9ff;
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 30px;
+            border-left: 5px solid #3b82f6;
+        }
+        
+        .project-info h3 {
+            color: #1e293b;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .project-info h3 i {
+            color: #3b82f6;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: white;
+            color: #1e293b;
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .project-link:hover {
+            background-color: #3b82f6;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
+        }
+        
+        .project-link i {
+            font-size: 1.2rem;
+        }
+        
+        .developer-info {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            color: #64748b;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            width: 100%;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(90deg, #3b82f6, #7c3aed);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
+        }
+        
+        @media (max-width: 768px) {
+            .content-card {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .page-title h2 {
+                font-size: 1.5rem;
+            }
+            
+            .answer-row {
+                padding: 15px 10px;
+            }
+            
+            .answer-number {
+                min-width: 50px;
+                margin-right: 15px;
+                font-size: 1.1rem;
+                height: 36px;
+                width: 36px;
+            }
+            
+            .answer-content {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+            
+            .content-card {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.7rem;
+            }
+            
+            .answer-row {
+                flex-direction: column;
+                padding: 15px 10px;
+            }
+            
+            .answer-number {
+                margin-right: 0;
+                margin-bottom: 10px;
+                align-self: flex-start;
+            }
+            
+            .page-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .page-title i {
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
+        }
+        
+        .note-box {
+            background-color: #fef3c7;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-left: 5px solid #f59e0b;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .note-box i {
+            color: #f59e0b;
+            font-size: 1.5rem;
+            margin-top: 2px;
+        }
+        
+        .note-box p {
+            color: #92400e;
+            font-size: 1rem;
+        }
+        
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #3b82f6;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+            transition: all 0.3s ease;
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .scroll-top-btn.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top-btn:hover {
+            background-color: #2563eb;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>FTX工具在线发布中心</h1>
+            <p class="subtitle">英语天学网答案（周末初级听力25及26）</p>
+            <div class="update-time">
+                <i class="fas fa-clock"></i>
+                <span id="update-time-text">更新时间：今天 12:00</span>
+            </div>
+        </div>
+        
+        <a href="#" class="back-btn" onclick="history.back(); return false;">
+            <i class="fas fa-arrow-left"></i>
+            <span>返回上一页</span>
+        </a>
+        
+        <!-- 初级听力25部分 -->
+        <div class="content-card">
+            <div class="page-title">
+                <i class="fas fa-headphones"></i>
+                <h2>初级听力 25</h2>
+            </div>
+            
+            <div class="note-box">
+                <i class="fas fa-info-circle"></i>
+                <p>答案使用 FTX_Tools 进行获取，目前该项目已在 Github 上开源</p>
+            </div>
+            
+            <div class="answers-container">
+                <div class="answer-row">
+                    <div class="answer-number">1</div>
+                    <div class="answer-content">A restaurant.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">2</div>
+                    <div class="answer-content">Friendly.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">3</div>
+                    <div class="answer-content">Attend a party.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">4</div>
+                    <div class="answer-content">Reports on a new school policy.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">5</div>
+                    <div class="answer-content">No timely help.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">6</div>
+                    <div class="answer-content">Students behave more actively during lessons.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">7</div>
+                    <div class="answer-content">Providing real-time updates.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">8</div>
+                    <div class="answer-content">In a restaurant.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">9</div>
+                    <div class="answer-content">Focused.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">10</div>
+                    <div class="answer-content">Engineering.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">11</div>
+                    <div class="answer-content">He got hay fever.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">12</div>
+                    <div class="answer-content">Pull over.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">13</div>
+                    <div class="answer-content">Meet with her trainer.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">14</div>
+                    <div class="answer-content">By bus.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">15</div>
+                    <div class="answer-content">A note-taker.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">16</div>
+                    <div class="answer-content">One hour.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">17</div>
+                    <div class="answer-content">Pink.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">18</div>
+                    <div class="answer-content">The man's cat.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">19</div>
+                    <div class="answer-content">To be close to town.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">20</div>
+                    <div class="answer-content">$2400.</div>
+                </div>
+            </div>
+            
+            <div class="project-info">
+                <h3><i class="fab fa-github"></i> 项目信息</h3>
+                <p>项目 Github 开源链接（大陆地区转链）：</p>
+                <a href="https://www.github-zh.com/projects/1070717045-ftx_tools" class="project-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                    <span>访问 FTX_Tools 项目</span>
+                </a>
+                <div class="developer-info">
+                    <p><strong>项目开发者：</strong> TSRS_1099</p>
+                    <p><strong>答案异常请联系：</strong> programmer_listchen@outlook.com</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 初级听力26部分 -->
+        <div class="content-card">
+            <div class="page-title">
+                <i class="fas fa-headphones"></i>
+                <h2>初级听力 26</h2>
+            </div>
+            
+            <div class="note-box">
+                <i class="fas fa-info-circle"></i>
+                <p>答案使用 FTX_Tools 进行获取，目前该项目已在 Github 上开源</p>
+            </div>
+            
+            <div class="answers-container">
+                <div class="answer-row">
+                    <div class="answer-number">1</div>
+                    <div class="answer-content">In 1786.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">2</div>
+                    <div class="answer-content">Trade.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">3</div>
+                    <div class="answer-content">They are influenced by mixed cultures.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">4</div>
+                    <div class="answer-content">Street food.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">5</div>
+                    <div class="answer-content">It improves performance.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">6</div>
+                    <div class="answer-content">Go to the bank.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">7</div>
+                    <div class="answer-content">It might meet the woman's taste.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">8</div>
+                    <div class="answer-content">On Thursday.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">9</div>
+                    <div class="answer-content">Posting packages.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">10</div>
+                    <div class="answer-content">Lots of love.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">11</div>
+                    <div class="answer-content">Deliver messages.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">12</div>
+                    <div class="answer-content">"All By Myself".</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">13</div>
+                    <div class="answer-content">Preparations for a competition.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">14</div>
+                    <div class="answer-content">In a forest.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">15</div>
+                    <div class="answer-content">The wind destroyed its home.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">16</div>
+                    <div class="answer-content">Bring it to their home.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">17</div>
+                    <div class="answer-content">A singer.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">18</div>
+                    <div class="answer-content">It takes lots of preparation.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">19</div>
+                    <div class="answer-content">Supporting local businesses.</div>
+                </div>
+                <div class="answer-row">
+                    <div class="answer-number">20</div>
+                    <div class="answer-content">Friends.</div>
+                </div>
+            </div>
+            
+            <div class="project-info">
+                <h3><i class="fab fa-github"></i> 项目信息</h3>
+                <p>项目 Github 开源链接（大陆地区转链）：</p>
+                <a href="https://www.github-zh.com/projects/1070717045-ftx_tools" class="project-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                    <span>访问 FTX_Tools 项目</span>
+                </a>
+                <div class="developer-info">
+                    <p><strong>项目开发者：</strong> TSRS_1099</p>
+                    <p><strong>答案异常请联系：</strong> programmer_listchen@outlook.com</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>FTX工具在线发布中心 &copy; 2025 | 英语天学网答案页面</p>
+        </div>
+    </div>
+
+    <!-- 回到顶部按钮 -->
+    <div class="scroll-top-btn" id="scrollTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // 更新时间的动态显示
+        document.addEventListener('DOMContentLoaded', function() {
+            const updateTimeElement = document.getElementById('update-time-text');
+            const now = new Date();
+            // 设置为今天12:00
+            updateTimeElement.textContent = `更新时间：${now.getFullYear()}年${now.getMonth()+1}月${now.getDate()}日 12:00`;
+            
+            // 为所有答案行添加点击效果
+            const answerRows = document.querySelectorAll('.answer-row');
+            answerRows.forEach(row => {
+                row.addEventListener('click', function() {
+                    this.style.backgroundColor = '#e0f2fe';
+                    setTimeout(() => {
+                        this.style.backgroundColor = '';
+                    }, 300);
+                });
+            });
+            
+            // 回到顶部按钮功能
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            
+            // 显示/隐藏回到顶部按钮
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.add('show');
+                } else {
+                    scrollTopBtn.classList.remove('show');
+                }
+            });
+            
+            // 点击回到顶部
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // 为每个答案行添加键盘导航
+            answerRows.forEach((row, index) => {
+                row.setAttribute('tabindex', '0');
+                row.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                    
+                    // 上下箭头键导航
+                    if (e.key === 'ArrowDown') {
+                        e.preventDefault();
+                        const nextRow = answerRows[index + 1];
+                        if (nextRow) nextRow.focus();
+                    }
+                    
+                    if (e.key === 'ArrowUp') {
+                        e.preventDefault();
+                        const prevRow = answerRows[index - 1];
+                        if (prevRow) prevRow.focus();
+                    }
+                });
+            });
+            
+            // 添加打印样式支持
+            const style = document.createElement('style');
+            style.textContent = `
+                @media print {
+                    .back-btn, .scroll-top-btn, .project-link {
+                        display: none !important;
+                    }
+                    
+                    .content-card {
+                        box-shadow: none !important;
+                        border: 1px solid #ddd !important;
+                        page-break-inside: avoid;
+                    }
+                    
+                    .answer-row:nth-child(even) {
+                        background-color: #f9f9f9 !important;
+                    }
+                    
+                    .answer-number {
+                        background-color: #eef !important;
+                        -webkit-print-color-adjust: exact;
+                        color-adjust: exact;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
